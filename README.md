@@ -75,7 +75,7 @@ Fonts used:
 * SourceCodePro Black
 * SourceCodePro Light
 
-Both fonts are members of the Source font family from [Adobe](http://www.adobe.com/) and are licensed under the SIL Open Font License, Version 1.1. Please see `[resources/fonts/LICENSE.txt](https://github.com/rexmac/pebble-wordsquare/blob/master/resources/fonts/LICENSE.txt)` for more information.
+Both fonts are members of the Source font family from [Adobe](http://www.adobe.com/) and are licensed under the SIL Open Font License, Version 1.1. Please see [`resources/fonts/LICENSE.txt`](https://github.com/rexmac/pebble-wordsquare/blob/master/resources/fonts/LICENSE.txt) for more information.
 
 Icons:
 
