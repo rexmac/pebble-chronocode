@@ -2,6 +2,8 @@
 
 **NOTE:** Requires Pebble Firmware v2.0 or greater.
 
+_The Pebble Firmware v2.0  is still in BETA and has not been officialy released. Use AT YOUR OWN RISK. Please [see this post](http://www.reddit.com/r/pebble/comments/1ttwv2/should_i_update_my_pebble_to_20/) for more information._
+
 Watchface app for the Pebble Smartwatch that fills the screen with a sequence
 of characters, which, at first glance, may appear to be completely random.
 However, all of the words required to display the current time appear
