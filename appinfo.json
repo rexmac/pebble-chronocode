@@ -1,0 +1,28 @@
+{
+  "uuid": "eefe2db3-3ca8-44c2-bc1c-f3e9e5e4ba1f",
+  "shortName": "WordSquare",
+  "longName": "WordSquare",
+  "companyName": "Rex McConnell",
+  "versionCode": 1,
+  "versionLabel": "2.0.0",
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {},
+  "resources": {
+    "media": [{
+      "menuIcon": true,
+      "type": "png",
+      "name": "IMAGE_MENU_ICON",
+      "file": "images/menu_icon_wordsquare.png"
+    },{
+      "type": "font",
+      "name": "FONT_SOURCECODEPRO_BLACK_20",
+      "file": "fonts/SourceCodePro-Black.otf"
+    },{
+      "type": "font",
+      "name": "FONT_SOURCECODEPRO_LIGHT_20",
+      "file": "fonts/SourceCodePro-Light.otf"
+    }]
+  }
+}
