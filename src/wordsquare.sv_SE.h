@@ -47,7 +47,7 @@ static const word_t words[] = {
   [LAYER_FEM]   = { 2, 1, "FEM", "fem" },
   [LAYER_TIO]   = { 1, 8, "TIO", "tio" },
   [LAYER_KVART] = { 2, 6, "KVART", "kvart" },
-  [LAYER_TJUGO] = { 1, 1, "TJUGO", "tjugo" },
+  [LAYER_TJUGO] = { 1, 2, "TJUGO", "tjugo" },
   [LAYER_HALV]  = { 4, 7, "HALV", "halv" },
 
   // Relative
