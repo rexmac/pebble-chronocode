@@ -65,8 +65,8 @@ static const word_t words[] = {
 
   // Extra, "random" characters used to fill in empty spaces between words
   [LAYER_FILLER] =
-    { 0,  2, "o", "z" },
-    { 0,  5, "apebble", "apebble" },
+    { 0,  2, "Z", "z" },
+    { 0,  5, "APEBBLE", "apebble" },
     { 1,  1, "T", "t" },
     { 2,  0, "K", "k" },
     { 2,  7, "N", "n" },

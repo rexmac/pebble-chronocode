@@ -8,7 +8,12 @@
   "watchapp": {
     "watchface": true
   },
-  "appKeys": {},
+  "capabilities": ["configurable"],
+  "appKeys": {
+    "allCaps": 0,
+    "inverted": 1,
+    "language": 2
+  },
   "resources": {
     "media": [{
       "menuIcon": true,

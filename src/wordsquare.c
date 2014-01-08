@@ -54,6 +54,34 @@ static Window *window; /**< The Pebble window */
 static TextLayer *text_layers[WORD_COUNT]; /**< Array of text layers for displaying the words */
 static GFont font_on;  /**< The font used for words that are inactive or "off" */
 static GFont font_off; /**< The font used for words that are active or "on" */
+static AppSync settings_sync; /**< Keeps settings in sync between phone and watch */
+static uint8_t settings_sync_buffer[64]; /**< Buffer used by settings sync */
+static uint8_t settings; /**< Current settings (as bit flags) */
+
+// Settings (bit) flags
+enum {
+  SETTING_ALL_CAPS = 1,
+  SETTING_INVERTED = 2
+};
+
+// Language IDs (not being used...yet)
+enum language {
+  EN_US = 0,
+  DA_DK = 1,
+  DE_DE = 2,
+  ES_ES = 3,
+  FR_FR = 4,
+  IT_IT = 5,
+  NL_NL = 6,
+  SV_SE = 7
+};
+
+// Settings AppSync keys; correspond to appKeys in appinfo.json
+enum {
+  SETTING_SYNC_KEY_ALL_CAPS = 0, // TUPLE_CSTRING
+  SETTING_SYNC_KEY_INVERTED = 1, // TUPLE_CSTRING
+  SETTING_SYNC_KEY_LANGUAGE = 2, // TUPLE_CSTRING
+};
 
 /**
  * Called once per minute to update time display.
@@ -81,7 +109,8 @@ static void minute_layer_update_callback(Layer * const me, GContext * ctx) {
   else if (minute_num == 3) box.origin = GPoint(144-w, 168-w); // bottom-left corner
   else if (minute_num == 4) box.origin = GPoint(0, 168-w); // bottom-right corner
 
-  graphics_context_set_fill_color(ctx, GColorWhite);
+  //graphics_context_set_fill_color(ctx, GColorWhite);
+  graphics_context_set_fill_color(ctx, (settings & SETTING_INVERTED) > 0 ? GColorBlack : GColorWhite);
   graphics_fill_rect(ctx, box, 1, GCornersAll);
 }
 
@@ -94,7 +123,7 @@ static void minute_layer_update_callback(Layer * const me, GContext * ctx) {
 static void toggle_word(int which, int on) {
   const word_t * const w = &words[which];
 
-  text_layer_set_text(text_layers[which], on ? w->text_on : w->text_off);
+  text_layer_set_text(text_layers[which], on ? w->text_on : ((settings & SETTING_ALL_CAPS) > 0 ? w->text_on : w->text_off));
   text_layer_set_font(text_layers[which], on ? font_on : font_off);
 }
 
@@ -114,12 +143,83 @@ static void word_layer_init(int which) {
   );
 
   text_layers[which] = text_layer_create(frame);
-  text_layer_set_text_color(text_layers[which], GColorWhite);
+  text_layer_set_text_color(text_layers[which], (settings & SETTING_INVERTED) > 0 ? GColorBlack : GColorWhite);
   text_layer_set_background_color(text_layers[which], GColorClear);
   text_layer_set_font(text_layers[which], font_off);
   Layer *window_layer = window_get_root_layer(window);
   layer_add_child(window_layer, text_layer_get_layer(text_layers[which]));
   toggle_word(which, 0); // all are "off" initially
+}
+
+/**
+ *
+ *
+ */
+static void clear_watchface() {
+  Layer *window_layer = window_get_root_layer(window);
+  GRect bounds = layer_get_bounds(window_layer);
+
+  for (unsigned i = 0 ; i < WORD_COUNT ; i++) {
+    text_layer_destroy(text_layers[i]);
+  }
+  layer_destroy(minute_layer);
+  window_set_background_color(window, (settings & SETTING_INVERTED) > 0 ? GColorWhite : GColorBlack);
+
+  for (unsigned i = 0 ; i < WORD_COUNT ; i++) {
+    word_layer_init(i);
+  }
+  minute_layer = layer_create(GRect(0, 0, bounds.size.w, bounds.size.h));
+  layer_set_update_proc(minute_layer, minute_layer_update_callback);
+  layer_add_child(window_layer, minute_layer);
+}
+
+/**
+ * Called when there is a settings sync error.
+ *
+ * @see https://developer.getpebble.com/2/api-reference/group___app_sync.html#ga144a1a8d8050f8f279b11cfb5d526212
+ */
+static void settings_sync_error_callback(DictionaryResult dict_error, AppMessageResult app_message_error, void *context) {
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Settings Sync Error: %d", app_message_error);
+}
+
+/**
+ * Called when a settings tuple has changed.
+ *
+ * @todo only update if new_tuple != old_tuple?
+ *
+ * @see https://developer.getpebble.com/2/api-reference/group___app_sync.html#ga448af36883189f6345cc7d5cd8a3cc29
+ */
+static void settings_sync_tuple_changed_callback(const uint32_t key, const Tuple* new_tuple, const Tuple* old_tuple, void* context) {
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Settings Sync Tuple Changed!");
+
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Settings Before: %u", settings);
+  switch (key) {
+    case SETTING_SYNC_KEY_ALL_CAPS:
+      APP_LOG(APP_LOG_LEVEL_DEBUG, "setting_all_caps: %u %u %s", new_tuple->type, new_tuple->length, new_tuple->value->cstring);
+      if (strcmp(new_tuple->value->cstring, "0") == 0) settings = settings & ~SETTING_ALL_CAPS;
+      else settings = settings | SETTING_ALL_CAPS;
+      break;
+    case SETTING_SYNC_KEY_INVERTED:
+      APP_LOG(APP_LOG_LEVEL_DEBUG, "setting_inverted: %u %u %s", new_tuple->type, new_tuple->length, new_tuple->value->cstring);
+      if (strcmp(new_tuple->value->cstring, "0") == 0) settings = settings & ~SETTING_INVERTED;
+      else settings = settings | SETTING_INVERTED;
+      break;
+    case SETTING_SYNC_KEY_LANGUAGE:
+      APP_LOG(APP_LOG_LEVEL_DEBUG, "setting_language: %u %u %s", new_tuple->type, new_tuple->length, new_tuple->value->cstring);
+      break;
+  }
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Settings After: %u", settings);
+
+  // Redraw watchface
+  clear_watchface();
+  /*layer_mark_dirty(minute_layer);
+  for (unsigned i = 0 ; i < WORD_COUNT ; i++) {
+    text_layer_set_text_color(text_layers[i], (settings & SETTING_INVERTED) > 0 ? GColorBlack : GColorWhite);
+    //layer_mark_dirty(text_layers[which]);
+  }*/
+  time_t now = time(NULL);
+  struct tm *t = localtime(&now);
+  update_time(t);
 }
 
 /**
@@ -142,8 +242,10 @@ static void window_load(Window *window) {
   for (unsigned i = 0 ; i < WORD_COUNT ; i++) {
     word_layer_init(i);
   }
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Word layer init: %u", sizeof(words[LAYER_FILLER]));
+  toggle_word(LAYER_FILLER, 1);
 
-  // Create a graphics layer for the entire background
+  // Initialize a graphics layer for the minute indicator
   minute_layer = layer_create(GRect(0, 0, bounds.size.w, bounds.size.h));
   layer_set_update_proc(minute_layer, minute_layer_update_callback);
   layer_add_child(window_layer, minute_layer);
@@ -163,17 +265,29 @@ static void window_unload(Window *window) {
   layer_destroy(minute_layer);
 }
 
+/**
+ * Initialize the app
+ *
+ */
 static void init(void) {
-  // Settings
-  /*if (persist_exists(SETTINGS_KEY)) {
-    persist_read_data(SETTINGS_KEY, sizeof(settings), &settings);
-  } else {
-    settings = DEFAULT_SETTINGS;
-  }*/
+  // Load settings and init sync with JS app on phone
+  settings = 0;
+  Tuplet initial_settings[] = {
+    //TupletInteger(SETTING_SYNC_KEY_ALL_CAPS, (uint8_t) 0),
+    //TupletInteger(SETTING_SYNC_KEY_INVERTED, (uint8_t) 0),
+    //TupletInteger(SETTING_SYNC_KEY_LANGUAGE, (uint8_t) 0)
+    TupletCString(SETTING_SYNC_KEY_ALL_CAPS, "0"),
+    TupletCString(SETTING_SYNC_KEY_INVERTED, "0"),
+    TupletCString(SETTING_SYNC_KEY_LANGUAGE, "0")
+  };
+  app_sync_init(&settings_sync, settings_sync_buffer, sizeof(settings_sync_buffer), initial_settings, ARRAY_LENGTH(initial_settings),
+    settings_sync_tuple_changed_callback, settings_sync_error_callback, NULL
+  );
+  app_message_open(64, 64);
 
   // Initialize fonts
   window = window_create();
-  window_set_background_color(window, GColorBlack);
+  window_set_background_color(window, (settings & SETTING_INVERTED) > 0 ? GColorWhite : GColorBlack);
   window_set_window_handlers(window, (WindowHandlers) {
     .load = window_load,
     .unload = window_unload,
@@ -185,16 +299,29 @@ static void init(void) {
   struct tm *t = localtime(&now);
   update_time(t);
 
+  // Subscribe to tick timer service to update watchface every minute
   tick_timer_service_subscribe(MINUTE_UNIT, handle_minute_tick);
 }
 
+/**
+ * De-initialize the app
+ *
+ */
 static void deinit(void) {
+  app_sync_deinit(&settings_sync);
   tick_timer_service_unsubscribe();
   window_destroy(window);
 }
 
+/**
+ * App entry point.
+ *
+ */
 int main(void) {
   init();
+
+  APP_LOG(APP_LOG_LEVEL_DEBUG, "Done initializing, pushed window: %p", window);
+
   app_event_loop();
   deinit();
 }
