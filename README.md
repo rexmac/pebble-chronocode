@@ -1,4 +1,4 @@
-# pebble-wordsquare
+# pebble-chronocode
 
 **NOTE:** Requires Pebble Firmware v2.0 or greater.
 
@@ -18,18 +18,31 @@ corner three minutes and the bottom-left corner four minutes. Using these
 corner markers, it is possible to discern the time down to the nearest one
 minute interval.
 
+The app is configurable via the Pebbel smartphone app. Options include:
+  - Inverted colors - black text on white screen rather than white text on black screen
+  - All-caps mode - All letters capitalized
+  - Language - One of eight languages can be chosen for the watchface display. Available languages include:
+    - English (en_US)
+    - Dansk (da_DK)
+    - Deutsch (de_DE)
+    - Español (es_ES)
+    - Français (fr_FR)
+    - Italiano (it_IT)
+    - Nederlands (nl_NL)
+    - Svenska (sv_SE)
+
 Example watchfaces in various states:
 
-[![Screenshot showing all words in the inactive state](http://rexmac.com/projects/pebble/pebble-wordsquare-sample-1.png)](http://rexmac.com/projects/pebble/pebble-wordsquare-sample-1.png)
-[![Screenshot showing display state for 5:00](http://rexmac.com/projects/pebble/pebble-wordsquare-sample-2.png)](http://rexmac.com/projects/pebble/pebble-wordsquare-sample-2.png)
-[![Screenshot showing display state for 5:50](http://rexmac.com/projects/pebble/pebble-wordsquare-sample-3.png)](http://rexmac.com/projects/pebble/pebble-wordsquare-sample-3.png)
-[![Screenshot showing display state for 3:15](http://rexmac.com/projects/pebble/pebble-wordsquare-sample-4.png)](http://rexmac.com/projects/pebble/pebble-wordsquare-sample-4.png)
+[![Screenshot showing all words in the inactive state](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-1.png)](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-1.png)
+[![Screenshot showing display state for 5:00](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-2.png)](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-2.png)
+[![Screenshot showing display state for 5:50](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-3.png)](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-3.png)
+[![Screenshot showing display state for 3:15](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-4.png)](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-4.png)
 
-### [Download](http://github.com/rexmac/pebble-wordsquare/releases)
+### [Download](http://github.com/rexmac/pebble-chronocode/releases)
 
 ## Install
 
-To install this watchface onto your Pebble device using your phone's browser, go to the [downloads page](http://github.com/rexmac/pebble-wordsquare/releases) and click the green `pebble-wordsquare.xx_XX.pbw` button (where `xx_XX` is the language of the watchface that you would like). Your phone should download and automatically install the file into your phone's Pebble app (or it may prompt you for which app to use to open the file, in which case you should select the Pebble app). You can then use the Pebble app on your phone to install the watchface to your Pebble watch.
+To install this watchface onto your Pebble device using your phone's browser, go to the [downloads page](http://github.com/rexmac/pebble-chronocode/releases) and click the green `pebble-chronocode.pbw` button. Your phone should download and automatically install the file into your phone's Pebble app (or it may prompt you for which app to use to open the file, in which case you should select the Pebble app). You can then use the Pebble app on your phone to install the watchface to your Pebble watch.
 
 ## Build
 
@@ -37,7 +50,7 @@ To build this watchface from source. Follow these steps:
 
 1. Clone this repository in an appropriate directory. For example:
 
-    `$ git clone https://github.com/rexmac/pebble-wordsquare.git`
+    `$ git clone https://github.com/rexmac/pebble-chronocode.git`
 
 2. Build the project:
 
@@ -51,7 +64,7 @@ For more information on building and installing Pebble apps from source, please 
 
 ## Bugs, Suggestions, Comments
 
-Please use the [Github issue system](https://github.com/rexmac/pebble-wordsquare/issues) to report bugs, request new features, or ask questions.
+Please use the [Github issue system](https://github.com/rexmac/pebble-chronocode/issues) to report bugs, request new features, or ask questions.
 
 ## Credits
 
@@ -66,7 +79,7 @@ Fonts used:
 * SourceCodePro Black
 * SourceCodePro Light
 
-Both fonts are members of the Source font family from [Adobe](http://www.adobe.com/) and are licensed under the SIL Open Font License, Version 1.1. Please see [`resources/fonts/LICENSE.txt`](https://github.com/rexmac/pebble-wordsquare/blob/master/resources/fonts/LICENSE.txt) for more information.
+Both fonts are members of the Source font family from [Adobe](http://www.adobe.com/) and are licensed under the SIL Open Font License, Version 1.1. Please see [`resources/fonts/LICENSE.txt`](https://github.com/rexmac/pebble-chronocode/blob/master/resources/fonts/LICENSE.txt) for more information.
 
 Icons:
 
