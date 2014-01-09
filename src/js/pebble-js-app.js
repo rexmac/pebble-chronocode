@@ -14,8 +14,7 @@
     if(!settings) {
       settings = {};
     }
-    //Pebble.openURL("http://pebble.rexmac.com/pebble-wordsquare/settings.html");
-    Pebble.openURL("http://rexmac.dev/pws/settings.html#" + encodeURIComponent(JSON.stringify(settings)));
+    Pebble.openURL("http://rexmac.com/projects/pebble/chronocode/settings.html");
   });
 
   Pebble.addEventListener("webviewclosed", function(e) {
