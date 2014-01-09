@@ -8,7 +8,7 @@ Watchface app for the Pebble Smartwatch that fills the screen with a sequence
 of characters, which, at first glance, may appear to be completely random.
 However, all of the words required to display the current time appear
 somewhere in the jumbled mess of characters. The current time (to the nearest
-five minute interval) is designated by highlighting the words needed to create
+five minute interval) is designated by emphasizing the words needed to create
 a sentence that one might use to say the time, e.g. "It is eight o'clock" or
 "It is a quarter past three". For a more precise time, the watchface displays a
 small box/dot in one of the corners of the screen with each corner representing
@@ -41,18 +41,7 @@ To build this watchface from source. Follow these steps:
 
 2. Build the project:
 
-    `$ make [lang=xx_XX]`
-
-    By default, the app will be built with the American English typeface (`en_US`). By using the optional `lang` option when calling `make`, it is possible it build the watchface with a different language/locale. Supported languages include:
-      * Dansk (da_DK)
-      * Deutsch (de_DE)
-      * English (en_US)
-      * Español (es_ES)
-      * Français (fr_FR)
-      * Italiano (it_IT)
-      * Nederlands (nl_NL)
-      * Русский язык (ru_RU) - work-in-progress
-      * Svenska (sv_SE)
+    `$ pebble build`
 
 3. Install the compiled project to your Pebble:
 

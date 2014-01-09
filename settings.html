@@ -57,9 +57,9 @@
   <script>
       function saveOptions() {
         var options = {
-          'allCaps':  $('#all-caps').val(),
-          'inverted': $('#inverted').val(),
-          'language': $('#language').val()
+          'allCaps':  parseInt($('#all-caps').val(), 10),
+          'inverted': parseInt($('#inverted').val(), 10),
+          'language': parseInt($('#language').val(), 10)
         }
         return options;
       }
@@ -72,24 +72,20 @@
           settings = JSON.parse(settings);
           settings = JSON.parse(settings);
         } catch(e) {
-          console.error('JSON parsing error:', e);
+          //console.error('JSON parsing error:', e);
           $.mobile.showPageLoadingMsg($.mobile.pageLoadErrorMessageTheme, 'Sorry! I failed to understand the settings sent to me from your Pebble app.', true);
           return;
         }
 
-        console.log('settings:', settings);
-
+        //console.log('settings:', settings);
         if (settings) {
-          console.log('settings exist');
           if (settings.allCaps) {
-            console.log('settings.allCaps exists');
             $('#all-caps').val(settings.allCaps).slider('refresh');
           }
           if (settings.inverted) {
             $('#inverted').val(settings.inverted).slider('refresh');
           }
           if (settings.language) {
-            //$('#language').val(settings.langauge).selectmenu('refresh');
             $('#language').find('option[value="' + settings.language + '"]')
               .siblings().removeAttr('selected')
               .end().attr('selected', 'selected')
@@ -98,15 +94,12 @@
         }
 
         $('#b-cancel').click(function() {
-          console.log('Cancel');
           document.location = 'pebblejs://close';
         });
 
         $('#b-submit').click(function() {
-          console.log('Submit');
-
           var location = 'pebblejs://close#' + encodeURIComponent(JSON.stringify(saveOptions()));
-          console.log('Warping to: ' + location);
+          //console.log('Warping to: ' + location);
           document.location = location;
         });
 

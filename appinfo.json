@@ -3,8 +3,8 @@
   "shortName": "WordSquare",
   "longName": "WordSquare",
   "companyName": "Rex McConnell",
-  "versionCode": 2,
-  "versionLabel": "2.0.1",
+  "versionCode": 7,
+  "versionLabel": "2.1.0",
   "watchapp": {
     "watchface": true
   },
@@ -19,7 +19,7 @@
       "menuIcon": true,
       "type": "png",
       "name": "IMAGE_MENU_ICON",
-      "file": "images/menu_icon_wordsquare.png"
+      "file": "images/menu_icon.png"
     },{
       "type": "font",
       "name": "FONT_SOURCECODEPRO_BLACK_20",
