@@ -11,7 +11,7 @@
 <body>
   <div data-role="page" id="main">
     <div data-role="header" class="jqm-header">
-      <h1>Pebble ChronoCode Settings</h1>
+      <h1>ChronoCode Settings</h1>
     </div>
 
     <div data-role="content">
@@ -67,17 +67,20 @@
       $(function() {
         var settings = decodeURIComponent(window.location.hash.replace(/^#/, ''));
 
-        try {
-          settings = JSON.parse(settings);
-          settings = JSON.parse(settings);
-        } catch(e) {
-          //console.error('JSON parsing error:', e);
-          $.mobile.showPageLoadingMsg($.mobile.pageLoadErrorMessageTheme, 'Sorry! I failed to understand the settings sent to me from your Pebble app.', true);
-          return;
-        }
-
         //console.log('settings:', settings);
         if (settings) {
+          try {
+            settings = JSON.parse(JSON.parse(settings));
+          } catch(e) {
+            console.log('JSON parsing error:', e);
+            $.mobile.showPageLoadingMsg($.mobile.pageLoadErrorMessageTheme, 'Sorry! I failed to understand the settings sent to me from your Pebble app.', true);
+            $(document).on('click.pcc-settings', function() {
+              $.mobile.hidePageLoadingMsg();
+              $(document).off('click.pcc-settings');
+            });
+            settings = '';
+          }
+
           if (settings.allCaps) {
             $('#all-caps').val(settings.allCaps).slider('refresh');
           }
