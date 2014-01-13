@@ -13,8 +13,8 @@ enum { LAYER_FILLER = 27 };
 
 // Settings (bit) flags
 enum {
-  SETTING_ALL_CAPS = 1,
-  SETTING_INVERTED = 2
+  SETTING_ALL_CAPS = 1 << 0,
+  SETTING_INVERTED = 1 << 1
 };
 
 // Settings AppSync keys; correspond to appKeys in appinfo.json
