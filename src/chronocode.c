@@ -1,9 +1,13 @@
+/**
+ * ChronoCode watchface for the Pebble Smartwatch
+ *
+ * @version 2.1.1
+ * @license New BSD License (please see LICENSE file)
+ * @repo https://github.com/rexmac/pebble-chronocode
+ * @author Rex McConnell <rex@rexmac.com>
+ */
 #include <pebble.h>
 
-/**
- * Common header file shared by all languages.
- *
- */
 #define FONT_H 18
 #define FONT_W 12
 #define FONT_ON  RESOURCE_ID_FONT_SOURCECODEPRO_BLACK_20
@@ -46,8 +50,6 @@ typedef struct {
   char text_on[13];  /**< The string to display when the word is "on" */
   char text_off[13]; /**< The string to display when the word is "off" */
 } word_t;
-
-//static void toggle_word(int which, int on);
 
 static Window *window; /**< The Pebble window */
 static TextLayer *text_layers[54]; /**< Array of text layers for displaying the words */
