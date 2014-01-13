@@ -1,3 +1,9 @@
+## 2.1.1 (2014-01-13)
+
+## Bugfixes:
+
+  - Fixed some JS bugs causing improper handling of app settings.
+
 ## 2.1.0 (2014-01-09)
 
 ### New Features:
