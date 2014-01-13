@@ -18,7 +18,7 @@ corner three minutes and the bottom-left corner four minutes. Using these
 corner markers, it is possible to discern the time down to the nearest one
 minute interval.
 
-The app is configurable via the Pebbel smartphone app. Options include:
+The app is configurable via the Pebble smartphone app. Options include:
   - Inverted colors - black text on white screen rather than white text on black screen
   - All-caps mode - All letters capitalized
   - Language - One of eight languages can be chosen for the watchface display. Available languages include:
