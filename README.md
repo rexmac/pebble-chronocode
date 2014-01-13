@@ -33,10 +33,10 @@ The app is configurable via the Pebble smartphone app. Options include:
 
 Example watchfaces in various states:
 
-[![Screenshot showing all words in the inactive state](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-1.png)](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-1.png)
-[![Screenshot showing display state for 5:00](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-2.png)](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-2.png)
-[![Screenshot showing display state for 5:50](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-3.png)](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-3.png)
-[![Screenshot showing display state for 3:15](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-4.png)](http://rexmac.com/projects/pebble/chronocode/pebble-chronocode-sample-4.png)
+[![Screenshot showing normal, "first run" state (time is 5:50)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot1.png)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot1.png)&nbsp;
+[![Screenshot showing German language, inverted colors (time is 11:10)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot2.png)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot2.png)&nbsp;
+[![Screenshot showing Swedish language, normal colors (time is 4:45)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot3.png)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot3.png)&nbsp;
+[![Screenshot showing Spanish language, inverted colors (time is 4:45)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot4.png)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot4.png)
 
 ### [Download](http://github.com/rexmac/pebble-chronocode/releases)
 
