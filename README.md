@@ -70,7 +70,7 @@ Please use the [Github issue system](https://github.com/rexmac/pebble-chronocode
 
 Based on and inspired by:
 
-* Wordsquare by [Hudson](https://bitbucket.org/hudson/pebble/src/words)
+* Wordsquare by [Hudson](https://bitbucket.org/hudson/pebble)
 * wordsquare DE by [Robert Gies](http://forums.getpebble.com/discussion/4724/watch-face-wordquare-german)
 * wordsquare_ES by [knopfler19](http://forums.getpebble.com/profile/10546/knopfler19)
 * WordSquare-fr by ocuser01
