@@ -2,7 +2,7 @@
   var settings = {};
 
   Pebble.addEventListener("ready", function(e) {
-    settings = window.localStorage.getItem("settings");
+    settings = window.localStorage.getItem("chronocode-settings");
     if(settings !== "") {
       var options = JSON.parse(settings);
       Pebble.sendAppMessage(options);
@@ -10,7 +10,7 @@
   });
 
   Pebble.addEventListener("showConfiguration", function() {
-    settings = window.localStorage.getItem("settings");
+    settings = window.localStorage.getItem("chronocode-settings");
     if(!settings) {
       settings = "{}";
     }
@@ -21,7 +21,7 @@
     var rt = typeof e.response,
         options = (rt === "undefined" ? {} : JSON.parse(decodeURIComponent(e.response)));
     if(Object.keys(options).length > 0) {
-      window.localStorage.setItem("settings", JSON.stringify(options));
+      window.localStorage.setItem("chronocode-settings", JSON.stringify(options));
       Pebble.sendAppMessage(options);
     }
   })
