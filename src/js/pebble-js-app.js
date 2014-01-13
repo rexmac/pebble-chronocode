@@ -3,7 +3,7 @@
 
   Pebble.addEventListener("ready", function(e) {
     settings = window.localStorage.getItem("settings");
-    if(settings !== '') {
+    if(settings !== "") {
       var options = JSON.parse(settings);
       Pebble.sendAppMessage(options);
     }
