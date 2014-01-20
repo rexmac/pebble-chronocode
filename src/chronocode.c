@@ -459,7 +459,7 @@ static const word_t words[][54] = {
 
     // Minutes before/after the hour
     [LAYER_NL_NL_VIJF]  = { 0, 7, "VIJF",  "vijf"  },
-    [LAYER_NL_NL_TIEN]  = { 1, 8, "ZEHN",  "zehn"  },
+    [LAYER_NL_NL_TIEN]  = { 1, 8, "TIEN",  "tien"  },
     [LAYER_NL_NL_KWART] = { 1, 1, "KWART", "kwart" },
     [LAYER_NL_NL_HALF]  = { 3, 0, "HALF",  "half"  },
 
