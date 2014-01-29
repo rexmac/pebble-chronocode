@@ -1,6 +1,21 @@
+## 2.2.0 (2014-01-27)
+
+### New Features:
+
+  - Added Belgisch-Nederlands (nl_BE) translation
+  - Added Português (pt_PT) translation
+  - Now storing translation strings and logic in individual resource files, which results in an over 75% decrease in RAM usage and a few kilobytes less in package (PBW file) size.
+  - Added "±2 minute dots" setting.
+
+## 2.1.2 (2014-01-20)
+
+### Bugfixes:
+
+  - Replaced ZEHN with TIEN in Dutch(Nederlands) translation.
+
 ## 2.1.1 (2014-01-13)
 
-## Bugfixes:
+### Bugfixes:
 
   - Fixed some JS bugs causing improper handling of app settings.
 

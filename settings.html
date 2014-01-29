@@ -33,15 +33,25 @@
       </div>
 
       <div data-role="fieldcontain">
+        <label for="two-min-dots">±2 minute dots:</label>
+        <select name="two-min-dots" id="two-min-dots" data-role="slider">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+      </div>
+
+      <div data-role="fieldcontain">
         <label for="language" class="select">Language:</label>
         <select name="language" id="language">
           <option value="0" selected="selected">English (en_US)</option>
+          <option value="8">Belgisch-Nederlands (nl_BE)</option>
           <option value="1">Dansk (da_DA)</option>
           <option value="2">Deutsch (de_DE)</option>
           <option value="3">Español (es_ES)</option>
           <option value="4">Français (fr_FR)</option>
           <option value="5">Italiano (it_IT)</option>
           <option value="6">Nederlands (nl_NL)</option>
+          <option value="9">Português (pt_PT)</option>
           <option value="7">Svenska (sv_SE)</option>
         </select>
       </div>
@@ -59,6 +69,7 @@
         var options = {
           'allCaps':  parseInt($('#all-caps').val(), 10),
           'inverted': parseInt($('#inverted').val(), 10),
+          'twoMinDots': parseInt($('#two-min-dots').val(), 10),
           'language': parseInt($('#language').val(), 10)
         }
         return options;
@@ -86,6 +97,9 @@
           }
           if (settings.inverted) {
             $('#inverted').val(settings.inverted).slider('refresh');
+          }
+          if (settings.twoMinDots) {
+            $('#two-min-dots').val(settings.twoMinDots).slider('refresh');
           }
           if (settings.language) {
             $('#language').find('option[value="' + settings.language + '"]')

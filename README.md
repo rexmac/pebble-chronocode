@@ -17,12 +17,14 @@ The app is configurable via the Pebble smartphone app. Options include:
   - All-caps mode - All letters capitalized
   - Language - One of eight languages can be chosen for the watchface display. Available languages include:
     - English (en_US)
+    - Belgisch-Nederlands (nl_BE)
     - Dansk (da_DK)
     - Deutsch (de_DE)
     - Español (es_ES)
     - Français (fr_FR)
     - Italiano (it_IT)
     - Nederlands (nl_NL)
+    - Português (pt_PT)
     - Svenska (sv_SE)
 
 Example watchfaces in various states:
@@ -37,6 +39,21 @@ Example watchfaces in various states:
 ## Install
 
 To install this watchface onto your Pebble device using your phone's browser, go to the [downloads page](http://github.com/rexmac/pebble-chronocode/releases) and click the green `pebble-chronocode.pbw` button. Your phone should download and automatically install the file into your phone's Pebble app (or it may prompt you for which app to use to open the file, in which case you should select the Pebble app). You can then use the Pebble app on your phone to install the watchface to your Pebble watch.
+
+## Use
+
+The current time is displayed (to the most recent five-minute interval) in sentence form. Four dots are shown in the corners of the screen to represent 1 (top-left), 2 (top-right), 3 (bottom-left), and 4 (bottom-right) minutes past the five-minute inerval.
+
+### Options
+
+* All Caps
+    Toggles "ALL CAPS" mode in which all letters are displayed in their capitalized (upper-case) state.
+
+* Inverted
+    Toggles inverted mode in which the colors of the display are inverted, i.e. black becomes white and white becomes black.
+
+* ±2 Minute Dots
+    Toggles "±2 minute dots" mode in which the watch changes behavior to display the nearest five-minute interval as opposed to the most recent five-minute interval. For example, 4:02 would still be displayed as "It is two o'clock," but 4:03 would be displayed as "It is five past two" as 4:03 is nearer to 4:05 than 4:00. In this mode, the four dots shown in the corners of the screen represent -1 (top-left), -2 (top-right), +1 (bottom-left), and +2 (bottom-right) minutes before or after the current five-minute interval. The earlier example of 4:02 would have the bottom-right dot displayed, while 4:03 would have the top-right dot displayed. This mode is a bit confusing at first if the user is accustomed to the "normal" display, but it is actually a more accurate display of the current time.
 
 ## Build
 
@@ -79,6 +96,10 @@ Both fonts are members of the Source font family from [Adobe](http://www.adobe.c
 Icons:
 
 * Menu icon - as far as I know, this icon was created by [Trammell Hudson](https://bitbucket.org/hudson/pebble/src/words)
+
+## Changelog
+
+Please see the [`CHANGELOG.md`](https://github.com/rexmac/pebble-chronocode/blob/master/CHANGELOG.md) file.
 
 ## License
 
