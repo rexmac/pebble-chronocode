@@ -1,3 +1,9 @@
+## 2.2.1 (2014-02-04)
+
+### Bugfixes:
+
+  - Refer to next hour when half (or more) past the current hour.
+
 ## 2.2.0 (2014-01-27)
 
 ### New Features:

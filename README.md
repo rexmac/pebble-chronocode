@@ -2,8 +2,6 @@
 
 **NOTE:** Requires Pebble Firmware v2.0 or greater.
 
-_The Pebble Firmware v2.0  is still in BETA and has not been officialy released. Use AT YOUR OWN RISK. Please [see this post](http://www.reddit.com/r/pebble/comments/1ttwv2/should_i_update_my_pebble_to_20/) for more information._
-
 ## Description
 
 ChronoCode (formerly known as WordSquare) displays the current time by emphasizing words "hidden" among a jumble of seemingly random letters. The time is displayed in sentence form, e.g. "It is five o'clock", "It is half past three", "It is a quarter to nine", etc. The watchface is configurable via the Pebble app on your smartphone. Options include inverted colors, all-caps mode, and 8 different languages.
