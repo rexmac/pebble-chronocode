@@ -3,8 +3,8 @@
   "shortName": "ChronoCode",
   "longName": "ChronoCode",
   "companyName": "Rex McConnell (rex@rexmac.com)",
-  "versionCode": 9,
-  "versionLabel": "2.2.0",
+  "versionCode": 10,
+  "versionLabel": "2.2.1",
   "watchapp": {
     "watchface": true
   },
@@ -23,10 +23,12 @@
       "file": "images/menu_icon.png"
     },{
       "type": "font",
+      "characterRegex": "[A-Za-z]",
       "name": "FONT_SOURCECODEPRO_BLACK_20",
       "file": "fonts/SourceCodePro-Black.otf"
     },{
       "type": "font",
+      "characterRegex": "[A-Za-z]",
       "name": "FONT_SOURCECODEPRO_LIGHT_20",
       "file": "fonts/SourceCodePro-Light.otf"
     },{

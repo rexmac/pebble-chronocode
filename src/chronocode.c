@@ -1,7 +1,7 @@
 /**
  * ChronoCode watchface for the Pebble Smartwatch
  *
- * @version 2.2.0
+ * @version 2.2.1
  * @license New BSD License (please see LICENSE file)
  * @repo https://github.com/rexmac/pebble-chronocode
  * @author Rex McConnell <rex@rexmac.com>
@@ -109,8 +109,6 @@ static void toggle_word(int which, int on) {
 /**
  * Update time display.
  *
- * @todo Optimize switch statement to (hopefully) reduce code and file size
- *
  * @param time The time to be disaplyed
  */
 static void update_time(struct tm *time) {
@@ -144,6 +142,11 @@ static void update_time(struct tm *time) {
   // Update the minute box
   minute_num = min % 5;
   layer_mark_dirty(minute_layer);
+
+  // Refer to current hour or next hour?
+  if(intervals[i][0]) {
+    if(++hour > 24) hour = 0;
+  }
 
   // Convert from 24-hour to 12-hour time
   if (hour == 0) hour = 12;
