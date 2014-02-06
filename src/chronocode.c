@@ -119,7 +119,10 @@ static void update_time(struct tm *time) {
   // Two-minute dot intervals?
   if ((settings & SETTING_TWO_MIN_DOTS) > 0) {
     i = ((min + 2.5) / 5) + 1;
-    if (i > 12) i = 1;
+    if (i > 12) {
+      i = 1;
+      hour++;
+    }
   }
 
   // Turn off all of the words
