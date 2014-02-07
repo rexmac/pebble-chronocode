@@ -1,3 +1,10 @@
+## 2.2.2 (2014-02-07)
+
+### Bugfixes:
+
+  - Refer to next hour when 25 minutes to next hour for French translation.
+  - Refer to next hour when two minutes or less to next hour and ±2 Minute Dots optoin is enabled.
+
 ## 2.2.1 (2014-02-04)
 
 ### Bugfixes:
