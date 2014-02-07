@@ -10,20 +10,7 @@ ChronoCode (formerly known as WordSquare) displays the current time by emphasizi
 
 ChronoCode is a watchface app for the Pebble Smartwatch that fills the screen with a sequence of characters, which, at first glance, may appear to be completely random. However, all of the words required to display the current time appear somewhere in the jumbled mess of characters. The current time (to the nearest five minute interval) is designated by emphasizing the words needed to create a sentence that one might use to say the time, e.g. "It is eight o'clock" or "It is a quarter past three". For a more precise time, the watchface displays a small box/dot in one of the corners of the screen with each corner representing one minute before/after the current five minute interval. The top-left corner represents one minute, the top-right corner two minutes, the bottom-right corner three minutes and the bottom-left corner four minutes. Using these corner markers, it is possible to discern the time down to the nearest one minute interval.
 
-The app is configurable via the Pebble smartphone app. Options include:
-  - Inverted colors - black text on white screen rather than white text on black screen
-  - All-caps mode - All letters capitalized
-  - Language - One of eight languages can be chosen for the watchface display. Available languages include:
-    - English (en_US)
-    - Belgisch-Nederlands (nl_BE)
-    - Dansk (da_DK)
-    - Deutsch (de_DE)
-    - Español (es_ES)
-    - Français (fr_FR)
-    - Italiano (it_IT)
-    - Nederlands (nl_NL)
-    - Português (pt_PT)
-    - Svenska (sv_SE)
+The app is configurable via the Pebble smartphone app. See Options section below for more details.
 
 Example watchfaces in various states:
 
@@ -52,6 +39,20 @@ The current time is displayed (to the most recent five-minute interval) in sente
 
 * ±2 Minute Dots
     Toggles "±2 minute dots" mode in which the watch changes behavior to display the nearest five-minute interval as opposed to the most recent five-minute interval. For example, 4:02 would still be displayed as "It is two o'clock," but 4:03 would be displayed as "It is five past two" as 4:03 is nearer to 4:05 than 4:00. In this mode, the four dots shown in the corners of the screen represent -1 (top-left), -2 (top-right), +1 (bottom-left), and +2 (bottom-right) minutes before or after the current five-minute interval. The earlier example of 4:02 would have the bottom-right dot displayed, while 4:03 would have the top-right dot displayed. This mode is a bit confusing at first if the user is accustomed to the "normal" display, but it is actually a more accurate display of the current time.
+
+* Language
+    One of eight languages can be chosen for the watchface display. Available languages include:
+      - English (en_US)
+      - Belgisch-Nederlands (nl_BE)
+      - Dansk (da_DK)
+      - Deutsch (de_DE)
+      - Español (es_ES)
+      - Français (fr_FR)
+      - Italiano (it_IT)
+      - Nederlands (nl_NL)
+      - Português (pt_PT)
+      - Svenska (sv_SE)
+
 
 ## Build
 
