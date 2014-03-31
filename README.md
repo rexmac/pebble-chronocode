@@ -72,6 +72,17 @@ To build this watchface from source. Follow these steps:
 
 For more information on building and installing Pebble apps from source, please see the official [Getting Started](https://developer.getpebble.com/2/getting-started/) guide.
 
+## Adding new translations
+
+__NOTE__: _Very bare bones instructions here. I really need to provide a translation template file with plenty of good comments to assist with the creation of new translation files. Also, the whole process of creating new translations could be vastly improved._
+
+* Create a new translation file named `chronocode.xx_XX.c`, where xx_XX is the locale code for the language. The locale code is comprised of the two-letter [ISO 639-1](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code followed by an underscore character (`_`) followed by the two-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country/region code.
+* Add a line to `cclp/src/cclp.c` to include the new translation file. Ensure all other translation file includes are commented out.
+* Run `make` to create a new cclp binary.
+* Run `cclp` to create a new `packed` file.
+* Copy the `packed` file to `resources/l10n/chronocode.xx_XX.cclp`.
+* Build ChronoCode as described above.
+
 ## Bugs, Suggestions, Comments
 
 Please use the [Github issue system](https://github.com/rexmac/pebble-chronocode/issues) to report bugs, request new features, or ask questions.
