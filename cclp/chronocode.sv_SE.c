@@ -85,9 +85,9 @@ static const uint8_t intervals[13][5] = {
   // XX:20 - XX:24
   { 0, LAYER_SV_SE_TJUGO, LAYER_SV_SE_OVER, 0, 0 },
   // XX:25 - XX:29
-  { 0, LAYER_SV_SE_FEM, LAYER_SV_SE_I, LAYER_SV_SE_HALV, 0 },
+  { 1, LAYER_SV_SE_FEM, LAYER_SV_SE_I, LAYER_SV_SE_HALV, 0 },
   // XX:30 - XX:34
-  { 0, LAYER_SV_SE_HALV, 0, 0, 0 },
+  { 1, LAYER_SV_SE_HALV, 0, 0, 0 },
   // XX:35 - XX:39
   { 1, LAYER_SV_SE_FEM, LAYER_SV_SE_OVER, LAYER_SV_SE_HALV, 1 },
   // XX:40 - XX:44
