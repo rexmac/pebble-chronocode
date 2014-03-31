@@ -1,3 +1,9 @@
+## 2.2.3 (2014-03-31)
+
+### Bugfixes:
+
+  - Refer to next hour when 25 or 30 minutes past the hour for Swedish watch face.
+
 ## 2.2.2 (2014-02-07)
 
 ### Bugfixes:

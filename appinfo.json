@@ -3,8 +3,8 @@
   "shortName": "ChronoCode",
   "longName": "ChronoCode",
   "companyName": "Rex McConnell (rex@rexmac.com)",
-  "versionCode": 12,
-  "versionLabel": "2.2.2",
+  "versionCode": 13,
+  "versionLabel": "2.2.3",
   "watchapp": {
     "watchface": true
   },
