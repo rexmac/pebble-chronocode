@@ -1,3 +1,16 @@
+/**
+ *   0123456789ab
+ * 0 KLOCKANpÄRyt
+ * 1 shTJUGOcTIOx
+ * 2 uFEMziKVARTj
+ * 3 detärenpbble
+ * 4 OVERmIpHALVz
+ * 5 TVÅjELVAoTIO
+ * 6 TRETOLVbuFEM
+ * 7 sFYRAcNIOSJU
+ * 8 ETTlSEXyÅTTA
+ */
+
 enum {
   // sv_SE
   LAYER_SV_SE_KLOCKAN = 13,
@@ -89,7 +102,7 @@ static const uint8_t intervals[13][5] = {
   // XX:30 - XX:34
   { 1, LAYER_SV_SE_HALV, 0, 0, 0 },
   // XX:35 - XX:39
-  { 1, LAYER_SV_SE_FEM, LAYER_SV_SE_OVER, LAYER_SV_SE_HALV, 1 },
+  { 1, LAYER_SV_SE_FEM, LAYER_SV_SE_OVER, LAYER_SV_SE_HALV, 0 },
   // XX:40 - XX:44
   { 1, LAYER_SV_SE_TJUGO, LAYER_SV_SE_I, 0, 0 },
   // XX:45 - XX:49
