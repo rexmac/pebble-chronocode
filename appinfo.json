@@ -55,6 +55,10 @@
       "file": "l10n/chronocode.it_IT.cclp"
     },{
       "type": "raw",
+      "name": "CHRONOCODE_NB_NO",
+      "file": "l10n/chronocode.nb_NO.cclp"
+    },{
+      "type": "raw",
       "name": "CHRONOCODE_NL_BE",
       "file": "l10n/chronocode.nl_BE.cclp"
     },{

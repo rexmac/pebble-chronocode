@@ -41,7 +41,8 @@ enum language_id {
   LANG_NL_NL = 6,
   LANG_SV_SE = 7,
   LANG_NL_BE = 8,
-  LANG_PT_PT = 9
+  LANG_PT_PT = 9,
+  LANG_NB_NO = 10
 };
 
 /**
@@ -333,9 +334,11 @@ static void load_language_from_resource_file() {
   switch(language_setting) {
     case LANG_DA_DK: resource_id = RESOURCE_ID_CHRONOCODE_DA_DK; break;
     case LANG_DE_DE: resource_id = RESOURCE_ID_CHRONOCODE_DE_DE; break;
+    case LANG_EN_US: resource_id = RESOURCE_ID_CHRONOCODE_EN_US; break;
     case LANG_ES_ES: resource_id = RESOURCE_ID_CHRONOCODE_ES_ES; break;
     case LANG_FR_FR: resource_id = RESOURCE_ID_CHRONOCODE_FR_FR; break;
     case LANG_IT_IT: resource_id = RESOURCE_ID_CHRONOCODE_IT_IT; break;
+    case LANG_NB_NO: resource_id = RESOURCE_ID_CHRONOCODE_NB_NO; break;
     case LANG_NL_BE: resource_id = RESOURCE_ID_CHRONOCODE_NL_BE; break;
     case LANG_NL_NL: resource_id = RESOURCE_ID_CHRONOCODE_NL_NL; break;
     case LANG_PT_PT: resource_id = RESOURCE_ID_CHRONOCODE_PT_PT; break;
