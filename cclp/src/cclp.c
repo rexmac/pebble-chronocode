@@ -17,8 +17,8 @@
 typedef struct {
   uint8_t x;
   uint8_t y;
-  char text_on[13];
-  char text_off[13];
+  char text_on[16];
+  char text_off[16];
 } word_t;
 
 //#include "chronocode.da_DK.c"

@@ -51,8 +51,8 @@ enum language_id {
 typedef struct {
   uint8_t row; /**< The row coordinate of the word's first letter */
   uint8_t col; /**< The column coordinate of the word's first letter */
-  char text_on[13];  /**< The string to display when the word is "on" */
-  char text_off[13]; /**< The string to display when the word is "off" */
+  char text_on[16];  /**< The string to display when the word is "on" */
+  char text_off[16]; /**< The string to display when the word is "off" */
 } word_t;
 
 static Window *window; /**< The Pebble window */
@@ -345,17 +345,17 @@ static void load_language_from_resource_file() {
   // Load language file
   uint8_t i;
   uint16_t j;
-  uint8_t buffer[28];
+  uint8_t buffer[34];
   ResHandle rh = resource_get_handle(resource_id);
   for(i = 1; i < word_count; i++) {
-    resource_load_byte_range(rh, (i-1)*27, buffer, 27);
+    resource_load_byte_range(rh, (i-1)*33, buffer, 33);
     mywords[i].row = (buffer[0] & 0b11110000) >> 4;
     mywords[i].col = (buffer[0] & 0b00001111);
-    memcpy(mywords[i].text_on, &buffer[1], 13);
-    memcpy(mywords[i].text_off, &buffer[14], 13);
+    memcpy(mywords[i].text_on, &buffer[1], 16);
+    memcpy(mywords[i].text_off, &buffer[17], 16);
   }
   // Load interval logic
-  j = (i-1)*27;
+  j = (i-1)*33;
   for(i = 0; i < 13; i++) {
     resource_load_byte_range(rh, j+(i*5), buffer, 5);
     intervals[i][0] = buffer[0];
