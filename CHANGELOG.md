@@ -1,3 +1,9 @@
+## 2.2.4 (2014-04-13)
+
+### Features:
+
+  - Added Norsk (nb_NO) translation
+
 ## 2.2.3 (2014-03-31)
 
 ### Bugfixes:
