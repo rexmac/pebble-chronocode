@@ -8,6 +8,8 @@
  */
 #include <pebble.h>
 
+#define STORAGE_SETTINGS_KEY 42
+
 #define FONT_H 18
 #define FONT_W 12
 #define FONT_ON  RESOURCE_ID_FONT_SOURCECODEPRO_BLACK_20
@@ -29,6 +31,12 @@ enum {
   SETTING_SYNC_KEY_LANGUAGE     = 2,
   SETTING_SYNC_KEY_TWO_MIN_DOTS = 3,
 };
+
+// Settings Store Object used to persist settings
+typedef struct SettingsStoreObject {
+  uint8_t flags;
+  uint8_t language;
+} __attribute__((__packed__)) SettingsStoreObject;
 
 // Language IDs
 enum language_id {
@@ -92,6 +100,16 @@ static word_t mywords[54];
  *
  */
 static uint8_t intervals[13][5];
+
+/**
+ * Store settings for seamless restauration
+ */
+static void store_settings(){
+  SettingsStoreObject unstored_settings;
+  unstored_settings.flags = settings;
+  unstored_settings.language = language_setting;
+  persist_write_data(STORAGE_SETTINGS_KEY, &unstored_settings, sizeof(unstored_settings));
+}
 
 /**
  * Toggle the on/off state of a single word.
@@ -415,6 +433,7 @@ static void settings_sync_tuple_changed_callback(const uint32_t key, const Tuple
   time_t now = time(NULL);
   struct tm *t = localtime(&now);
   update_time(t);
+  
 }
 
 /**
@@ -466,9 +485,18 @@ static void window_unload(Window *window) {
  *
  */
 static void init(void) {
-  settings = 0;
-  language_setting = LANG_EN_US;
-
+  // Try to read stored settings.
+  SettingsStoreObject stored_settings;
+  
+  if (persist_exists(STORAGE_SETTINGS_KEY)) {
+    persist_read_data(STORAGE_SETTINGS_KEY, &stored_settings, sizeof(stored_settings));
+    settings = stored_settings.flags;
+    language_setting = stored_settings.language;
+  } else {
+    settings = 0;
+    language_setting = LANG_EN_US;
+  }
+ 
   // Initialize window
   window = window_create();
   window_set_background_color(window, (settings & SETTING_INVERTED) > 0 ? GColorWhite : GColorBlack);
@@ -488,10 +516,10 @@ static void init(void) {
 
   // Load settings and init sync with JS app on phone
   Tuplet initial_settings[] = {
-    TupletInteger(SETTING_SYNC_KEY_ALL_CAPS, 0),
-    TupletInteger(SETTING_SYNC_KEY_INVERTED, 0),
-    TupletInteger(SETTING_SYNC_KEY_LANGUAGE, LANG_EN_US),
-    TupletInteger(SETTING_SYNC_KEY_TWO_MIN_DOTS, 0)
+    TupletInteger(SETTING_SYNC_KEY_ALL_CAPS, (settings & SETTING_ALL_CAPS)),
+    TupletInteger(SETTING_SYNC_KEY_INVERTED, (settings & SETTING_INVERTED)),
+    TupletInteger(SETTING_SYNC_KEY_LANGUAGE, language_setting),
+    TupletInteger(SETTING_SYNC_KEY_TWO_MIN_DOTS, (settings & SETTING_TWO_MIN_DOTS))
   };
   app_sync_init(&settings_sync, settings_sync_buffer, sizeof(settings_sync_buffer), initial_settings, ARRAY_LENGTH(initial_settings),
     settings_sync_tuple_changed_callback, settings_sync_error_callback, NULL
@@ -504,6 +532,7 @@ static void init(void) {
  *
  */
 static void deinit(void) {
+  store_settings();
   app_sync_deinit(&settings_sync);
   tick_timer_service_unsubscribe();
   window_destroy(window);
