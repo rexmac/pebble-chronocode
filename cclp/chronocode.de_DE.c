@@ -21,8 +21,8 @@ enum {
 static const word_t words[54] = {
   // Hours 1-12
   [1]  = { 3, 9, "EIN",    "ein"    },
-  [2]  = { 6, 1, "ZWEI",   "zwei"   },
-  [3]  = { 4, 7, "DREI",   "drei"   },
+  [2]  = { 6, 0, "ZWEI",   "zwei"   },
+  [3]  = { 4, 8, "DREI",   "drei"   },
   [4]  = { 7, 0, "VIER",   "vier"   },
   [5]  = { 5, 8, "FÜNF",   "fünf"   },
   [6]  = { 8, 0, "SECHS",  "sechs"  },
@@ -31,7 +31,7 @@ static const word_t words[54] = {
   [9]  = { 6, 8, "NEUN",   "neun"   },
   [10] = { 7, 8, "ZEHN",   "zehn"   },
   [11] = { 6, 5, "ELF",    "elf"    },
-  [12] = { 4, 1, "ZWÖLF",  "zwölf"  },
+  [12] = { 4, 0, "ZWÖLF",  "zwölf"  },
   [13] = { 8, 5, "EINS",   "eins"   },
 
   // Minutes before/after the hour
@@ -55,14 +55,14 @@ static const word_t words[54] = {
     { 0, 11, "T", "t" },
     { 1,  4, "L", "l" },
     { 2,  7, "K", "k" },
-    { 3,  3, "P", "p" },
+    { 3,  3, "S", "s" },
     { 3,  8, "O", "o" },
-    { 4,  0, "F", "f" },
-    { 4,  6, "G", "g" },
-    { 4, 11, "P", "p" },
+    { 4,  5, "G", "g" },
+    { 4,  6, "K", "k" },
+    { 4,  7, "P", "p" },
     { 5,  6, "J", "j" },
     { 5,  7, "T", "t" },
-    { 6,  0, "Ä", "ä" }
+    { 6,  4, "U", "u" }
 };
 
 static const uint8_t intervals[13][5] = {
