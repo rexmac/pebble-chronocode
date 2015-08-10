@@ -11,7 +11,14 @@
 #define FONT_H 18
 #define FONT_W 12
 #define FONT_ON  RESOURCE_ID_FONT_SOURCECODEPRO_BLACK_20
+
+#ifdef PBL_COLOR
+#define FONT_OFF RESOURCE_ID_FONT_SOURCECODEPRO_BLACK_20
+#else
 #define FONT_OFF RESOURCE_ID_FONT_SOURCECODEPRO_LIGHT_20
+#endif
+
+
 
 enum { LAYER_FILLER = 27 };
 
@@ -105,6 +112,14 @@ static void toggle_word(int which, int on) {
 
   text_layer_set_text(text_layers[which], on ? w->text_on : ((settings & SETTING_ALL_CAPS) > 0 ? w->text_on : w->text_off));
   text_layer_set_font(text_layers[which], on ? font_on : font_off);
+  
+  #ifdef PBL_COLOR
+  if ((settings & SETTING_INVERTED) > 0) {
+    text_layer_set_text_color(text_layers[which], on ? GColorBlack : GColorLightGray);
+  } else {
+    text_layer_set_text_color(text_layers[which], on ? GColorWhite : GColorDarkGray);
+  }
+  #endif
 }
 
 /**

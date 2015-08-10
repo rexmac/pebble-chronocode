@@ -4,11 +4,13 @@
   "longName": "ChronoCode",
   "companyName": "Rex McConnell (rex@rexmac.com)",
   "versionCode": 14,
-  "versionLabel": "2.2.4",
+  "versionLabel": "2.3",
   "watchapp": {
     "watchface": true
   },
-  "capabilities": ["configurable"],
+  "capabilities": [
+    "configurable"
+  ],
   "appKeys": {
     "allCaps": 0,
     "inverted": 1,
@@ -16,63 +18,83 @@
     "twoMinDots": 3
   },
   "resources": {
-    "media": [{
-      "menuIcon": true,
-      "type": "png",
-      "name": "IMAGE_MENU_ICON",
-      "file": "images/menu_icon.png"
-    },{
-      "type": "font",
-      "name": "FONT_SOURCECODEPRO_BLACK_20",
-      "file": "fonts/SourceCodePro-Black.otf"
-    },{
-      "type": "font",
-      "name": "FONT_SOURCECODEPRO_LIGHT_20",
-      "file": "fonts/SourceCodePro-Light.otf"
-    },{
-      "type": "raw",
-      "name": "CHRONOCODE_DA_DK",
-      "file": "l10n/chronocode.da_DK.cclp"
-    },{
-      "type": "raw",
-      "name": "CHRONOCODE_DE_DE",
-      "file": "l10n/chronocode.de_DE.cclp"
-    },{
-      "type": "raw",
-      "name": "CHRONOCODE_EN_US",
-      "file": "l10n/chronocode.en_US.cclp"
-    },{
-      "type": "raw",
-      "name": "CHRONOCODE_ES_ES",
-      "file": "l10n/chronocode.es_ES.cclp"
-    },{
-      "type": "raw",
-      "name": "CHRONOCODE_FR_FR",
-      "file": "l10n/chronocode.fr_FR.cclp"
-    },{
-      "type": "raw",
-      "name": "CHRONOCODE_IT_IT",
-      "file": "l10n/chronocode.it_IT.cclp"
-    },{
-      "type": "raw",
-      "name": "CHRONOCODE_NB_NO",
-      "file": "l10n/chronocode.nb_NO.cclp"
-    },{
-      "type": "raw",
-      "name": "CHRONOCODE_NL_BE",
-      "file": "l10n/chronocode.nl_BE.cclp"
-    },{
-      "type": "raw",
-      "name": "CHRONOCODE_NL_NL",
-      "file": "l10n/chronocode.nl_NL.cclp"
-    },{
-      "type": "raw",
-      "name": "CHRONOCODE_PT_PT",
-      "file": "l10n/chronocode.pt_PT.cclp"
-    },{
-      "type": "raw",
-      "name": "CHRONOCODE_SV_SE",
-      "file": "l10n/chronocode.sv_SE.cclp"
-    }]
-  }
+    "media": [
+      {
+        "menuIcon": true,
+        "type": "png",
+        "name": "IMAGE_MENU_ICON",
+        "file": "images/menu_icon.png"
+      },
+      {
+        "type": "font",
+        "name": "FONT_SOURCECODEPRO_BLACK_20",
+        "file": "fonts/SourceCodePro-Black.otf"
+      },
+      {
+        "type": "font",
+        "name": "FONT_SOURCECODEPRO_LIGHT_20",
+        "file": "fonts/SourceCodePro-Light.otf"
+      },
+      {
+        "type": "raw",
+        "name": "CHRONOCODE_DA_DK",
+        "file": "l10n/chronocode.da_DK.cclp"
+      },
+      {
+        "type": "raw",
+        "name": "CHRONOCODE_DE_DE",
+        "file": "l10n/chronocode.de_DE.cclp"
+      },
+      {
+        "type": "raw",
+        "name": "CHRONOCODE_EN_US",
+        "file": "l10n/chronocode.en_US.cclp"
+      },
+      {
+        "type": "raw",
+        "name": "CHRONOCODE_ES_ES",
+        "file": "l10n/chronocode.es_ES.cclp"
+      },
+      {
+        "type": "raw",
+        "name": "CHRONOCODE_FR_FR",
+        "file": "l10n/chronocode.fr_FR.cclp"
+      },
+      {
+        "type": "raw",
+        "name": "CHRONOCODE_IT_IT",
+        "file": "l10n/chronocode.it_IT.cclp"
+      },
+      {
+        "type": "raw",
+        "name": "CHRONOCODE_NB_NO",
+        "file": "l10n/chronocode.nb_NO.cclp"
+      },
+      {
+        "type": "raw",
+        "name": "CHRONOCODE_NL_BE",
+        "file": "l10n/chronocode.nl_BE.cclp"
+      },
+      {
+        "type": "raw",
+        "name": "CHRONOCODE_NL_NL",
+        "file": "l10n/chronocode.nl_NL.cclp"
+      },
+      {
+        "type": "raw",
+        "name": "CHRONOCODE_PT_PT",
+        "file": "l10n/chronocode.pt_PT.cclp"
+      },
+      {
+        "type": "raw",
+        "name": "CHRONOCODE_SV_SE",
+        "file": "l10n/chronocode.sv_SE.cclp"
+      }
+    ]
+  },
+  "targetPlatforms": [
+    "aplite",
+    "basalt"
+  ],
+  "sdkVersion": "3"
 }
