@@ -14,7 +14,7 @@
     if(!settings) {
       settings = "{}";
     }
-    Pebble.openURL("https://s3.amazonaws.com/pebble.rexmac.com/chronocode/settings-2.2.4.html#" + encodeURIComponent(JSON.stringify(settings)));
+    Pebble.openURL("https://rexmac.github.io/pebble-chronocode/settings-2.2.5.html#" + encodeURIComponent(JSON.stringify(settings)));
   });
 
   Pebble.addEventListener("webviewclosed", function(e) {
