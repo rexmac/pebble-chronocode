@@ -2,3 +2,5 @@
 .lock-waf_*_build
 build
 sdk
+
+node_modules/

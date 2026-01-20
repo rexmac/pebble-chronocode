@@ -1,0 +1,85 @@
+[
+  {
+    "type": "heading",
+    "defaultValue": "ChronoCode Configuration"
+  },
+  {
+    "type": "section",
+    "items": [
+      {
+        "type": "toggle",
+        "messageKey": "allCaps",
+        "label": "All Caps",
+        "defaultValue": false
+      },
+      {
+        "type": "toggle",
+        "messageKey": "inverted",
+        "label": "Inverted Colors",
+        "defaultValue": false
+      },
+      {
+        "type": "toggle",
+        "messageKey": "twoMinDots",
+        "label": "Two Minute Dots",
+        "defaultValue": false
+      },
+      {
+        "type": "select",
+        "messageKey": "language",
+        "label": "Language",
+        "defaultValue": 0,
+        "options": [
+          {
+            "label": "English (en_US)",
+            "value": 0
+          },
+          {
+            "label": "Belgisch-Nederlands (nl_BE)",
+            "value": 8
+          },
+          {
+            "label": "Dansk (da_DK)",
+            "value": 1
+          },
+          {
+            "label": "Deutsch (de_DE)",
+            "value": 2
+          },
+          {
+            "label": "Español (es_ES)",
+            "value": 3
+          },
+          {
+            "label": "Français (fr_FR)",
+            "value": 4
+          },
+          {
+            "label": "Italiano (it_IT)",
+            "value": 5
+          },
+          {
+            "label": "Nederlands (nl_NL)",
+            "value": 6
+          },
+          {
+            "label": "Norsk (nb_NO)",
+            "value": 10
+          },
+          {
+            "label": "Português (pt_PT)",
+            "value": 9
+          },
+          {
+            "label": "Svenska (sv_SE)",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "type": "submit",
+        "defaultValue": "Save Settings"
+      }
+    ]
+  }
+]

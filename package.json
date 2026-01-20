@@ -1,0 +1,115 @@
+{
+  "version": "2.3.0",
+  "author": "Rex McConnell (rex@rexmac.com)",
+  "private": true,
+  "keywords": [
+    "pebble-app"
+  ],
+  "pebble": {
+    "sdkVersion": "3",
+    "resources": {
+      "media": [
+        {
+          "menuIcon": true,
+          "type": "png",
+          "name": "IMAGE_MENU_ICON",
+          "file": "images/menu_icon.png"
+        },
+        {
+          "type": "font",
+          "name": "FONT_SOURCECODEPRO_BLACK_20",
+          "file": "fonts/SourceCodePro-Black.otf"
+        },
+        {
+          "type": "font",
+          "name": "FONT_SOURCECODEPRO_LIGHT_20",
+          "file": "fonts/SourceCodePro-Light.otf"
+        },
+        {
+          "type": "raw",
+          "name": "CHRONOCODE_DA_DK",
+          "file": "l10n/chronocode.da_DK.cclp"
+        },
+        {
+          "type": "raw",
+          "name": "CHRONOCODE_DE_DE",
+          "file": "l10n/chronocode.de_DE.cclp"
+        },
+        {
+          "type": "raw",
+          "name": "CHRONOCODE_EN_US",
+          "file": "l10n/chronocode.en_US.cclp"
+        },
+        {
+          "type": "raw",
+          "name": "CHRONOCODE_ES_ES",
+          "file": "l10n/chronocode.es_ES.cclp"
+        },
+        {
+          "type": "raw",
+          "name": "CHRONOCODE_FR_FR",
+          "file": "l10n/chronocode.fr_FR.cclp"
+        },
+        {
+          "type": "raw",
+          "name": "CHRONOCODE_IT_IT",
+          "file": "l10n/chronocode.it_IT.cclp"
+        },
+        {
+          "type": "raw",
+          "name": "CHRONOCODE_NB_NO",
+          "file": "l10n/chronocode.nb_NO.cclp"
+        },
+        {
+          "type": "raw",
+          "name": "CHRONOCODE_NL_BE",
+          "file": "l10n/chronocode.nl_BE.cclp"
+        },
+        {
+          "type": "raw",
+          "name": "CHRONOCODE_NL_NL",
+          "file": "l10n/chronocode.nl_NL.cclp"
+        },
+        {
+          "type": "raw",
+          "name": "CHRONOCODE_PT_PT",
+          "file": "l10n/chronocode.pt_PT.cclp"
+        },
+        {
+          "type": "raw",
+          "name": "CHRONOCODE_SV_SE",
+          "file": "l10n/chronocode.sv_SE.cclp"
+        }
+      ]
+    },
+    "projectType": "native",
+    "uuid": "eefe2db3-3ca8-44c2-bc1c-f3e9e5e4ba1f",
+    "messageKeys": {
+      "twoMinDots": 3,
+      "allCaps": 0,
+      "language": 2,
+      "inverted": 1
+    },
+    "enableMultiJS": true,
+    "displayName": "ChronoCode",
+    "watchapp": {
+      "onlyShownOnCommunication": false,
+      "hiddenApp": false,
+      "watchface": true
+    },
+    "targetPlatforms": [
+      "aplite",
+      "basalt",
+      "diorite",
+      "emery",
+      "flint"
+    ],
+    "capabilities": [
+      "configurable"
+    ]
+  },
+  "name": "ChronoCode",
+  "dependencies": {
+    "@rebble/clay": "^1.0.6"
+  }
+}

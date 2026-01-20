@@ -4,7 +4,7 @@
 
 ## Description
 
-ChronoCode (formerly known as WordSquare) displays the current time by emphasizing words "hidden" among a jumble of seemingly random letters. The time is displayed in sentence form, e.g. "It is five o'clock", "It is half past three", "It is a quarter to nine", etc. The watchface is configurable via the Pebble app on your smartphone. Options include inverted colors, all-caps mode, and 8 different languages.
+ChronoCode displays the current time by emphasizing words "hidden" among a jumble of seemingly random letters. The time is displayed in sentence form, e.g. "It is five o'clock", "It is half past three", "It is a quarter to nine", etc. The watchface is configurable via the Pebble app on your smartphone. Options include inverted colors, all-caps mode, and 8 different languages.
 
 ### Extended Description
 
@@ -14,10 +14,10 @@ The app is configurable via the Pebble smartphone app. See Options section below
 
 Example watchfaces in various states:
 
-[![Screenshot showing normal, "first run" state (time is 5:50)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot1.png)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot1.png)&nbsp;
-[![Screenshot showing German language, inverted colors (time is 11:10)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot2.png)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot2.png)&nbsp;
-[![Screenshot showing Swedish language, normal colors (time is 4:45)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot3.png)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot3.png)&nbsp;
-[![Screenshot showing Spanish language, inverted colors (time is 4:45)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot4.png)](https://s3.amazonaws.com/pebble.rexmac.com/chronocode/screenshot4.png)
+[![Screenshot of Pebble watchface showing default state (time is 10:18)](/screenshots/default.en_US.png?raw=true "Default (time is 10:18)")](/screenshots/default.en_US.png)&nbsp;
+[![Screenshot of Pebble watchface showing German language and inverted colors (time is 10:36)](/screenshots/inverted.de_DE.png?raw=true "German language and inverted colors (time is 10:36)")](/screenshosts/inverted.de_DE.png)&nbsp;
+[![Screenshot of Pebble watchface showing Swedish language, normal colors (time is 10:20)](/screenshots/default.sv_SE.png?raw=true "Swedish language, normal colors (time is 10:20)")](/screenshots/default.sv_SE.png)&nbsp;
+[![Screenshot of Pebble watchface showing Spanish language, inverted colors (time is 10:43)](/screenshots/inverted.es_ES.png?raw=true "Spanish language, inverted colors (time is 10:43)")](/screenshots/inverted.es_ES.png)
 
 ### [Download](http://github.com/rexmac/pebble-chronocode/releases)
 
@@ -68,9 +68,9 @@ To build this watchface from source. Follow these steps:
 
 3. Install the compiled project to your Pebble:
 
-    `$ pebble install --phone [your_phone_ip_here]`
+    `$ pebble install --cloudpebble`
 
-For more information on building and installing Pebble apps from source, please see the official [Getting Started](https://developer.getpebble.com/2/getting-started/) guide.
+For more information on building and installing Pebble apps from source, please see the [RePebble Developer site](https://developer.repebble.com/).
 
 ## Adding new translations
 
