@@ -1,7 +1,7 @@
 /**
  * ChronoCode watchface for the Pebble Smartwatch
  *
- * @version 2.3.0
+ * @version 3.0.0
  * @license New BSD License (please see LICENSE file)
  * @repo https://github.com/rexmac/pebble-chronocode
  * @author Rex McConnell <rex@rexmac.com>
