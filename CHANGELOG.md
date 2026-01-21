@@ -1,3 +1,22 @@
+## 3.0.0 (2026-01-19)
+
+### BREAKING CHANGES:
+
+  - Migrate from legacy AppSync to @rebble/clay configuration framework
+  - Settings configuration now uses Clay JSON format instead of HTML-based settings page
+  - Existing user settings will be reset to defaults on first launch
+
+### Features:
+
+  - Modern Clay-based settings UI with improved UX
+  - Consistent function naming with `prv_` prefix for static functions
+  - Add `prv_update_display_now()` utility function to reduce code duplication
+
+### Documentation:
+
+  - Update README with current project information
+  - Update screenshots
+
 ## 2.2.4 (2014-04-13)
 
 ### Features:
